@@ -30,14 +30,15 @@ class ApiController extends Controller
 
         if (!empty($obResult->errors)) {
             foreach ($obResult->errors as $obError) {
-                //Exclude user errors from the logs (for example, an error in the field name)
-                if (!in_array(
-                    $obError->getCategory(),
-                    [Error::CATEGORY_INTERNAL,
-                    MethodNotFoundException::CATEGORY_BUSINESS_LOGIC]
-                )) {
-                    continue;
-                }
+//                //Exclude user errors from the logs (for example, an error in the field name)
+//                #deprecated in webonyx/graphql-php 15 https://github.com/webonyx/graphql-php/blob/v15.24.0/UPGRADE.md
+//                if (!in_array(
+//                    $obError->getCategory(),
+//                    [Error::CATEGORY_INTERNAL,
+//                    MethodNotFoundException::CATEGORY_BUSINESS_LOGIC]
+//                )) {
+//                    continue;
+//                }
 
                 Log::error(
                     $obError->getMessage() . PHP_EOL . PHP_EOL

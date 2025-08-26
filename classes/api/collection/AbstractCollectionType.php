@@ -29,6 +29,9 @@ abstract class AbstractCollectionType extends AbstractObjectType
     /** @var array */
     protected $arCustomArgumentList = [];
 
+    /** @var array */
+    protected $arArgumentValueList = [];
+
     /** @var string */
     protected $sFilterInputTypeClass = FilterCollectionInputType::class;
 
